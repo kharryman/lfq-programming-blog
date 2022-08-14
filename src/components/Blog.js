@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../index.css';
 //import Images from '../images/index';
 
+import javascriptData from '../data/JavascriptData.js';
+
 export default class Blog extends Component {
    constructor(props) {
       super(props);
@@ -26,7 +28,7 @@ export default class Blog extends Component {
    render() {
       //this.setState({cheatListView:this.state.cheatListView});
       return (
-        <div class="blogDiv">
+        <div className="blogDiv">
         </div>
       );
    }

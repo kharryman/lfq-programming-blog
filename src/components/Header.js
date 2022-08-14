@@ -24,9 +24,9 @@ export default class Header extends Component {
    render() {
       //this.setState({cheatListView:this.state.cheatListView});
       return (
-        <div class="headerDiv">
-             <img src={lfq_logo} className="App-logo" alt="logo" class="logoImage" />        
-             <div class="headerTitle">LFQ Programming Blog</div>
+        <div className="headerDiv">
+             <img src={lfq_logo} className="logoImage" alt="logo" />        
+             <div className="headerTitle">LFQ Programming Blog</div>
         </div>
       );
    }

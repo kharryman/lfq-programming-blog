@@ -13,9 +13,10 @@ code {
 }
 
 .App {
+  text-align: left;
   margin: 15px;
   width: 100%;
-  min-height: 100vh;
+  min-height: 95vh;
   background-color: aliceblue;
 }
 
@@ -46,36 +47,34 @@ code {
   height: 100px;
 }
 
-.blogDiv {
-  width: 100%;
-  height: 100%;
-}
-
 .welcomeMessage {
-  width: 100%;
   margin-left: 25px;
+  width: 100%;
   font-weight: 600;
   font-size: 14pt;
   font-style: oblique;
-  font-family: Verdana, Geneva, Tahoma, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .navBar {
   width: 100%;
-  height: 50px;
-  margin-left: 50px;
+  margin: 50;
 }
 
 .navBarButton {
   border-radius: 5px;
-  background-color: azure;
-  height: 50px;
+  white-space: nowrap;
+  background-color: rgb(230, 245, 245);
+  height: 20px;
   width: 100px;
 }
 
 .footerDiv {
+  display: table;  
   padding: 10px 0;
+  height: 20px;
   background: #6f7d94 none repeat scroll 0%;
+  vertical-align: middle;
   position: fixed;
   bottom: 0px;
   width: 98%;
@@ -83,7 +82,8 @@ code {
 }
 
 .footerParagraph{
-  margin-left: 20px;
+  display: table-cell;
+  padding-left: 20px;
 }
 
 .footerEmail{
@@ -92,4 +92,49 @@ code {
    font-style: italic;
    font-size: 12pt;
    margin:5px;
+}
+
+.blogContent{
+  width: calc(95vw + 7px);  
+  text-align: left;
+}
+
+.sideBar{  
+  text-align: left;
+  margin-right: 1px;
+  padding-right: 5px;
+  float: left;
+  width: 125px;
+  min-height: 95vh;
+  background-color: white;
+  background: linear-gradient(to right, white 85%, #eaeaf4 100%);
+}
+
+.blogDiv {
+  text-align: left;
+  margin-left: 1px;
+  margin-bottom: 30px;
+  float: right;
+  width: calc(95vw - 125px);
+  min-height: 95vh;
+  background-color: white;
+}
+
+.topicHeaderWrapper{
+  height: 50px;
+}
+
+.topicHeader{
+  margin-left: 75px;
+  text-decoration: underline;
+  font-style: oblique;
+}
+
+.topicWrapper{
+  margin: 50px
+}
+
+.myParagraph{
+  font-family: 'Arial';
+  line-height: 20px;
 }
