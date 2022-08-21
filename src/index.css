@@ -30,14 +30,35 @@ code {
   margin: 10px;
 }
 
-.headerTitle {
-  display: inline-block;
-  display: table-cell;
-  vertical-align: middle;
-  vertical-align: middle;
+.headerBoard {
+  float: right;
+  width: calc(95% - 100px);
+  height: 100px;
   margin: auto;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.headerAd {
+  width: 97%;
+  height: 65px;
+  margin-top: 5px;
+  margin-right: 1px;
+  margin-left: 0px;
+  padding-left: 0px;
+  border: 1px solid gray;
+}
+
+.headerTitle {
+  width: 97%;
+  height: 15px;
+  margin-right: 1px;
+  margin-left: 0px;
+  padding-left: 0px;
+  border: 1px solid gray;
+  vertical-align: middle;
   font-weight: 600;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   font-style: oblique;
   font-family: Verdana, Geneva, Tahoma, sans-serif
 }
@@ -45,6 +66,7 @@ code {
 .logoImage {
   float: left;
   height: 100px;
+  width: 100px;
 }
 
 .welcomeMessage {
@@ -57,8 +79,12 @@ code {
 }
 
 .navBar {
-  width: 100%;
-  margin: 50;
+  overflow: auto;
+  white-space:normal;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;  
+  text-overflow: clip;
 }
 
 .navBarButton {
@@ -69,8 +95,65 @@ code {
   width: 100px;
 }
 
+.navbarDropdown {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0px;
+  padding: 0px;
+  text-overflow: clip;
+}
+
+
+.dropdownTitleWrapper{
+  display: inline-block;
+  width: 100px;
+  height: 25px;
+  border: 1px solid black;
+  background-color: rgb(230, 245, 245);
+  border-radius: 4px;
+}
+
+.dropdownTitle {
+  display: inline-block;
+  margin-left: 5px;
+  white-space: normal;
+  height: 100%;
+  width: 80%;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.dropdownTitleSmall {
+  display: inline-block;
+  margin-left: 5px;
+  white-space:normal;
+  height: 100%;
+  width: 80%;
+  font-size: 13px;
+  line-height: 12px;
+  vertical-align: middle;
+}
+
+
+.dropdownTitleWrapper:hover {
+  background-color: rgb(98, 174, 174);
+}
+
+.dropdownButton {
+  border: 1px solid gray;
+  text-align: center;
+  min-width: 150px;
+  height: 25px;
+  background-color: rgb(130, 213, 213);
+  z-index: 1;
+}
+
+.dropdownButton:hover {
+  background-color: rgb(98, 174, 174);
+}
+
 .footerDiv {
-  display: table;  
+  display: table;
   padding: 10px 0;
   height: 20px;
   background: #6f7d94 none repeat scroll 0%;
@@ -81,25 +164,25 @@ code {
   clear: both;
 }
 
-.footerParagraph{
+.footerParagraph {
   display: table-cell;
   padding-left: 20px;
 }
 
-.footerEmail{
-   color: rgba(50, 12, 58, 0.75);
-   font-weight: bold;
-   font-style: italic;
-   font-size: 12pt;
-   margin:5px;
+.footerEmail {
+  color: rgba(50, 12, 58, 0.75);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 12pt;
+  margin: 5px;
 }
 
-.blogContent{
-  width: calc(95vw + 7px);  
+.blogContent {
+  width: calc(95vw + 7px);
   text-align: left;
 }
 
-.sideBar{  
+.sideBar {
   text-align: left;
   margin-right: 1px;
   padding-right: 5px;
@@ -114,27 +197,37 @@ code {
   text-align: left;
   margin-left: 1px;
   margin-bottom: 30px;
-  float: right;
-  width: calc(95vw - 125px);
+  float: left;
+  width: calc(95vw - 150px);
   min-height: 95vh;
   background-color: white;
 }
 
-.topicHeaderWrapper{
-  height: 50px;
+.blogAdDiv {
+  text-align: left;
+  margin-bottom: 30px;
+  border-left: 1px solid gray;
+  float: right;
+  width: calc(25vw);
+  min-height: 95vh;
+  background-color: white;
 }
 
-.topicHeader{
+.topicHeaderWrapper {
+  width: 100%;
+}
+
+.topicHeader {
   margin-left: 75px;
   text-decoration: underline;
   font-style: oblique;
 }
 
-.topicWrapper{
+.topicWrapper {
   margin: 50px
 }
 
-.myParagraph{
+.myParagraph {
   font-family: 'Arial';
   line-height: 20px;
 }

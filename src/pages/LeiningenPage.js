@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import '../index.css';
+import { CopyBlock, dracula } from "react-code-blocks";
 //import Images from '../images/index';
 
 
@@ -16,7 +17,8 @@ function LeiningenCPage(props) {
         console.log("topicSelected called, topic = " + props.selectedTopic);
         renderedJSX = '';
         if (props.selectedTopic === "Intro") { renderedJSX = getIntroJSX(); }
-        else if (props.selectedTopic === "Install on Mac") { renderedJSX = getInstallMaxJSX(); }
+        else if (props.selectedTopic === "Install on Mac") { renderedJSX = getInstallMacJSX(); }
+        else if (props.selectedTopic === "Install on Linux") { renderedJSX = getInstallLinuxJSX(); }
 
         console.log("topicSelected renderedJSX = " + JSON.stringify(renderedJSX));
         //this.setState({ renderedJSX: jsxText });
@@ -31,7 +33,7 @@ function LeiningenCPage(props) {
         );
     }
 
-    function getInstallMaxJSX() {
+    function getInstallMacJSX() {
         return (
             <div>
                 <p>1) go to leiningen.org and copy script into /usr/local/bin/lein</p>
@@ -40,7 +42,20 @@ function LeiningenCPage(props) {
                 <p>4) Make sure you have Java SE JDK 8 (install from oracle)</p>
                 <p>5) run it : lein</p>
             </div>
-        )
+        );
+    }
+
+    function getInstallLinuxJSX() {
+        return (
+            <div>
+                <p>On teminal run:</p><br />
+                <CopyBlock
+                    text={'sudo apt-get install leiningen'}
+                    language='shell'
+                    theme={dracula}
+                />
+            </div>
+        );
     }
 
     return (

@@ -3,7 +3,7 @@ import '../index.css';
 //import Images from '../images/index';
 
 
-function SafariPage(props) {
+function CPanelPage(props) {
     let [renderedJSX, setData] = useState([]);
 
     useEffect(() => {
@@ -16,10 +16,7 @@ function SafariPage(props) {
         console.log("topicSelected called, topic = " + props.selectedTopic);
         renderedJSX = '';
         if (props.selectedTopic === "Intro") { renderedJSX = getIntroJSX(); }
-        else if (props.selectedTopic === "Enable Development Console") { renderedJSX = getEnableDevJSX(); }
-        else if (props.selectedTopic === "Empty Cache") { renderedJSX = getEmptyCacheJSX(); }
-
-
+        if (props.selectedTopic === "Clear Disk Space") { renderedJSX = getClearDiskSpaceJSX(); }
         console.log("topicSelected renderedJSX = " + JSON.stringify(renderedJSX));
         //this.setState({ renderedJSX: jsxText });
         return renderedJSX;
@@ -28,33 +25,20 @@ function SafariPage(props) {
     function getIntroJSX() {
         return (
             <div>
-                Safari is a browser that usually comes per-installed on Mac personal computers or laptops and mobile devices.
+                Cpanel backend software that most host servers come with.<br />
+                It usually includes MySQL and PHP and SSL support.
             </div>
         );
     }
 
-    function getEnableDevJSX() {
-        const step1 = "Safari => Preferences => Advanced => Click 'Show Develop menu in menu bar'";
-        const step2 = "Develop => 'Show Web Inspector'";
+    function getClearDiskSpaceJSX(){
         return (
             <div>
-                To enable development mode:<br />
-                <ol>
-                    <li>Go to :<br /><code>{step1}</code></li>
-                    <li>Go to :<br /><code>{step2}</code> or...</li>
-                    <li>On page to inspect, click: <br /><code>&#8984; + ALT + I</code></li>
-                </ol>
+                To clear disk space:<br />
+                Delete all files inside '.trash' folder of root directory.<br />
+                You may need to access it using an FTP tool like FileZilla.
             </div>
         );
-    }
-
-    function getEmptyCacheJSX(){
-        return (
-            <div>
-                To empty cache:<br />
-                <code>&#8984; + OPTION + E</code>
-            </div>
-        );        
     }
 
     return (
@@ -73,7 +57,7 @@ const styles = {
     }
 }
 
-export default SafariPage;
+export default CPanelPage;
 
 
 

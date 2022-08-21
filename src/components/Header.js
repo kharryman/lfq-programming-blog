@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import lfq_logo from '../lfq_logo.jpg';
 import '../index.css';
 
@@ -12,7 +12,7 @@ export default class Header extends Component {
       };
    }
 
-    componentDidMount(){
+   componentDidMount() {
       //BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
    }
 
@@ -24,10 +24,16 @@ export default class Header extends Component {
    render() {
       //this.setState({cheatListView:this.state.cheatListView});
       return (
-        <div className="headerDiv">
-             <img src={lfq_logo} className="logoImage" alt="logo" />        
-             <div className="headerTitle">LFQ Programming Blog</div>
-        </div>
+         <div className="headerDiv">
+            <img src={lfq_logo} className="logoImage" alt="logo" />
+            <div className="headerBoard">
+               <div className="headerAd">
+               </div>
+               <div className="headerTitle">
+                  LFQ Programming Blog
+               </div>
+            </div>
+         </div>
       );
    }
 }

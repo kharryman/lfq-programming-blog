@@ -3,7 +3,7 @@ import '../index.css';
 //import Images from '../images/index';
 
 
-function VisualStudioCodePage(props) {
+function ShellPage(props) {
     let [renderedJSX, setData] = useState([]);
 
     useEffect(() => {
@@ -16,7 +16,6 @@ function VisualStudioCodePage(props) {
         console.log("topicSelected called, topic = " + props.selectedTopic);
         renderedJSX = '';
         if (props.selectedTopic === "Intro") { renderedJSX = getIntroJSX(); }
-        if (props.selectedTopic === "Auto Formatting") { renderedJSX = getAutoFormatJSX(); }
         console.log("topicSelected renderedJSX = " + JSON.stringify(renderedJSX));
         //this.setState({ renderedJSX: jsxText });
         return renderedJSX;
@@ -25,23 +24,9 @@ function VisualStudioCodePage(props) {
     function getIntroJSX() {
         return (
             <div>
-                Visual Studio Code, is a useful editor used for many programming languages, such as <br />
-                Javascript, AngularJS, Angular, Typescript, PHP, Clojure, etc...<br />                
-                It includes many features like autoformatting and github integration.<br />
-                The UI is very colorful and intuitive.<br />
-                It allows for open-source plugin integration.
+                Shell scripts have '.sh' extension and used on Linux or Mac machine terminals.
             </div>
-        );        
-    }
-
-    function getAutoFormatJSX(){
-        let code1 = "SHIFT + ALT + F";
-        return (
-            <div>
-                To auto format for most programming languages:<br />
-                Click: <code>{code1}</code>
-            </div>
-        );        
+        );
     }
 
     return (
@@ -60,7 +45,7 @@ const styles = {
     }
 }
 
-export default VisualStudioCodePage;
+export default ShellPage;
 
 
 

@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import '../index.css';
+import { CopyBlock, dracula } from "react-code-blocks";
 //import Images from '../images/index';
 
 
@@ -21,6 +22,10 @@ function PostgresPage(props) {
         else if (props.selectedTopic === "Installing on  Mac") { renderedJSX = getInstallMacJSX(); }
         else if (props.selectedTopic === "JSON Functions") { renderedJSX = getJsonFunctionsJSX(); }
         else if (props.selectedTopic === "Setup Empty Password") { renderedJSX = getEmptyPasswordSX(); }
+        else if (props.selectedTopic === "Create Database") { renderedJSX = getCreateDatabaseSX(); }
+        else if (props.selectedTopic === "Remove Postgres") { renderedJSX = getRemovePostgresSX(); }
+
+
         console.log("topicSelected renderedJSX = " + JSON.stringify(renderedJSX));
         //this.setState({ renderedJSX: jsxText });
         return renderedJSX;
@@ -59,11 +64,11 @@ function PostgresPage(props) {
         return (
             <div>
                 <strong>Useful JSON functions of Postgres are:</strong>
-                <ul>                
+                <ul>
                     <li><a href={'#json_agg'}>json_agg</a></li>
                     <li><a href={'#jsonb_build_object'}>jsonb_build_object</a></li>
                     <li><a href={'#row_to_json'}>row_to_json</a></li>
-                    
+
                 </ul>
                 <p>
                     These JSON functions are useful for getting data from om your database(s) and returning the data to your app(s).
@@ -79,7 +84,7 @@ function PostgresPage(props) {
                 <div id="row_to_json">
                     <h3>row_to_json:</h3>
                     creates json object from row of database table.
-                </div>                
+                </div>
             </div>
         );
     }
@@ -87,8 +92,60 @@ function PostgresPage(props) {
     function getEmptyPasswordSX() {
         return (
             <div>
-                To set up empty password, you need to create the postgres user with a null password:<br />
-                <code>create user postgres with password null;</code>
+                <ol>
+                    <li>
+                        To set up empty password, you can create the postgres user with a null password:<br />
+                        <CopyBlock
+                            text={'create user postgres with password null;'}
+                            language='shell'
+                            theme={dracula}
+                        />
+                        or you can alter the postgres role:<br />
+                        <CopyBlock
+                            text={'alter role postgres password null;'}
+                            language='shell'
+                            theme={dracula}
+                        />
+                        <br />
+                    </li>
+                    <li>
+                        Then you need to set pg_hba.conf METHOD to `trust` for all conections.<br /><br />
+                    </li>
+                    <li>
+                        Then restart postgres:<br />
+                        <CopyBlock
+                            text={'sudo service postgresql restart'}
+                            language='shell'
+                            theme={dracula}
+                        />
+                    </li>
+                </ol>
+            </div>
+        );
+    }
+
+    function getCreateDatabaseSX(){
+        return (
+            <div>
+                To create a database on Postgres:<br />
+                <CopyBlock
+                    text={'sudo apt-get --purge remove postgresql<version>'}
+                    language='shell'
+                    theme={dracula}
+                />
+            </div>
+        );        
+    }
+
+    function getRemovePostgresSX() {
+        return (
+            <div>
+                To remove Postgres:<br />
+                <CopyBlock
+                    text={'sudo apt-get --purge remove postgresql<version>'}
+                    language='shell'
+                    theme={dracula}
+                />
             </div>
         );
     }
