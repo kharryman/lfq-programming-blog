@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import '../index.css';
+import { CopyBlock, dracula } from "react-code-blocks";
 //import Images from '../images/index';
 
 
@@ -16,6 +17,7 @@ function FastlanePage(props) {
         console.log("topicSelected called, topic = " + props.selectedTopic);
         renderedJSX = '';
         if (props.selectedTopic === "Intro") { renderedJSX = getIntroJSX(); }
+        else if (props.selectedTopic === "Install") { renderedJSX = getInstallJSX(); }        
         console.log("topicSelected renderedJSX = " + JSON.stringify(renderedJSX));
         //this.setState({ renderedJSX: jsxText });
         return renderedJSX;
@@ -28,6 +30,22 @@ function FastlanePage(props) {
             </div>
         );
     }
+
+    function getInstallJSX() {
+        return (
+            <div>
+                To install fastlane:<br />                
+                <CopyBlock
+                    text={'[sudo] gem install fastlane -NV'}
+                    language='shell'
+                    theme={dracula}
+                />
+                **If you don't have ruby:<br />
+                On Windows, go to<br />
+                <a href="https://www.ruby-lang.org/en/downloads/">https://www.ruby-lang.org/en/downloads/</a>
+            </div>
+        );
+    }    
 
     return (
         <div className="topicWrapper">

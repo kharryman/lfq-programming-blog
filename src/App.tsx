@@ -81,7 +81,7 @@ export default class App extends Component<{}, { selectedGroup: string, selected
     } else if (selectedGroup === "AWS S3") {
       blogList = ["Intro"];
     } else if (selectedGroup === "Bash") {
-      blogList = ["Intro"];
+      blogList = ["Intro", "Conditionals", "Commands"];
     } else if (selectedGroup === "Casper JS") {
       blogList = ["Intro", "Installation", "Running", "Quirks", "Docs"];
     } else if (selectedGroup === "Chrome") {
@@ -97,7 +97,7 @@ export default class App extends Component<{}, { selectedGroup: string, selected
     } else if (selectedGroup === "Eclipse") {
       blogList = ["Intro"];
     } else if (selectedGroup === "Fastlane") {
-      blogList = ["Intro"];
+      blogList = ["Intro", "Install"];
     } else if (selectedGroup === "Git") {
       blogList = ["Intro", "Git Ignore File", "Revert to Old Commit", "Hard Merge to Master", "Use Old Commit as New Branch"];
     } else if (selectedGroup === "Gulp") {
@@ -141,7 +141,7 @@ export default class App extends Component<{}, { selectedGroup: string, selected
     }  else if (selectedGroup === "AWS S3") {
       blogList = ["Intro"];
     }else if (selectedGroup === "Shell") {
-      blogList = ["Intro"];
+      blogList = ["Intro", "Conditionals", "Commands"];
     } else if (selectedGroup === "Swift") {
       blogList = ["Intro"];
     } else if (selectedGroup === "Typescript") {
